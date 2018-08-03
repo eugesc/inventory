@@ -11,6 +11,29 @@ class CategoriesController < ApplicationController
 		render "categories/show"
 	end
 
+	def delete
+		@category = Category.find(params[:id])
+		@category.destroy!
+
+		redirect_to "/categories"
+	end
+
+	def edit
+		@category = Category.find(params[:id])
+
+		render "categories/edit"
+	end
+
+	def update
+		@category = Category.find(params[:id])
+
+		if @category.update(category_params)
+			redirect_to "/categories/#{@category.id}"
+		else
+			render "categories/edit"
+		end
+	end
+
 	def new
 		@category = Category.new
 

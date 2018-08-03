@@ -9,8 +9,13 @@ Rails.application.routes.draw do
   post "/items/update/:id", to: "items#update"
   get "/items/delete/:id", to: "items#delete"
 
+	get "/api/v1/items", to: "items#items_json"
+
 	get "/categories", to: "categories#index"
 	get "/categories/new", to: "categories#new"
 	post "/categories/create", to: "categories#create"
 	get "/categories/:id", to: "categories#show"
+	get "/categories/delete/:id", to: "categories#delete"
+	get "/categories/edit/:id", to: "categories#edit"
+	post "/categories/update/:id", to: "categories#update"
 end

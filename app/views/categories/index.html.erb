@@ -5,15 +5,23 @@
 <table class="table table-bordered table-hover">
 	<tr>
 		<th>Name</th>
+		<th>Count</th>
 		<th>Actions</th>
 	</tr>
 	<% @categories.each do |c| %>
 		<tr>
 			<td><%= c.name %></td>
+			<td><%= c.items.size %></td>
 			<td>
 				<a href="/categories/<%= c.id %>" class="btn btn-sm btn-info">
 					Show
 				</a>
+				<a href="/categories/edit/<%= c.id %>" class="btn btn-sm btn-info">
+					Edit
+				</a>
+				<%= link_to "/categories/delete/#{c.id}", data: { confirm: "Sure ka ba?" }, class: "btn btn-danger" do %>
+					Delete
+				<% end %>
 			</td>
 		</tr>
 	<% end %>

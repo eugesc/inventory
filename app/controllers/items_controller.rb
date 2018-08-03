@@ -7,6 +7,12 @@ class ItemsController < ApplicationController
     render "items/index"
   end
 
+	def items_json	
+		@items = Item.all
+		
+		render json: @items
+	end
+
   # /items/edit/:id
   def edit
     @item = Item.find(params[:id])
