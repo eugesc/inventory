@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+	root to: "pages#index"	
+
   get "/items", to: "items#index"
   get "/items/new", to: "items#new"
   post "/items/create", to: "items#create"
