@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   get "/items/edit/:id", to: "items#edit"
   post "/items/update/:id", to: "items#update"
   get "/items/delete/:id", to: "items#delete"
+
+	get "/categories", to: "categories#index"
+	get "/categories/new", to: "categories#new"
+	post "/categories/create", to: "categories#create"
+	get "/categories/:id", to: "categories#show"
 end

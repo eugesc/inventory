@@ -2,7 +2,7 @@
 
 <a href="/items">Back to Items</a>
 
-<table>
+<table class="table">
   <tr>
     <td><strong>ID</strong></td>
     <td><%= @item.id %></td>
@@ -18,5 +18,13 @@
   <tr>
     <td><strong>Quantity</strong></td>
     <td><%= @item.quantity %></td>
+  </tr>
+  <tr>
+    <td><strong>Category</strong></td>
+    <td>
+			<a href="/categories/<%= @item.category.id %>">
+				<%= @item.category.name %>
+			</a>
+		</td>
   </tr>
 </table>

@@ -1,0 +1,10 @@
+<h1>Category: <%= @category.name %></h1>
+
+<h2>Items</h2>
+<ul>
+	<% @category.items.each do |item| %>
+		<li>
+			<a href="/items/<%= item.id %>"><%= item.name %> (<%= item.quantity %> left)</a>
+		</li>
+	<% end %>
+</ul>
