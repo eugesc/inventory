@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col">
+    <h1>Items</h1>
+
+    <a href="/items/new" class="btn btn-primary">New item</a>
+
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+      </tr>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= item.id %></td>
+          <td><%= item.name %></td>
+          <td><%= item.description %></td>
+          <td><%= item.quantity %></td>
+          <td>
+            <a href="/items/<%= item.id %>" class="btn btn-xs btn-info">
+              <span class="fa fa-search"></span>
+              Show
+            </a>
+            <a href="/items/edit/<%= item.id %>" class="btn btn-xs btn-info">
+              <span class="fa fa-pencil"></span>
+              Edit
+            </a>
+            <a href="/items/delete/<%= item.id %>" class="btn btn-xs btn-danger">
+              <span class="fa fa-times"></span>
+              Delete
+            </a>
+          </td>
+        </tr>
+      <% end %>
+      <tr>
+        <td>Total Quantity</td>
+        <td></td>
+        <td></td>
+        <td><%= @total_quantity %></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</div>
